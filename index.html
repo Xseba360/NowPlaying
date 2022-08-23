@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <title>Now Playing</title>
+        <meta charset='UTF-8'>
+        <link rel='preconnect' href='https://fonts.googleapis.com'>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+        <link href='https://fonts.googleapis.com/css2?family=Fira+Code&display=swap' rel='stylesheet'>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 6px;
+                background: transparent;
+                color: white;
+                font-family: 'Fira Code', monospace;
+                text-shadow: 0 0 3px #0009,0 0 5px #0009;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <span id='song'>Loading...</span>
+        <script>
+            const songElem = document.getElementById('song')
+            window.setInterval(async ()=> {
+                const response = await fetch('/getInfo', {
+                    method: 'GET'
+                })
+                songElem.innerText = await response.text()
+            }, 1000)
+        </script>
+    </body>
+</html>

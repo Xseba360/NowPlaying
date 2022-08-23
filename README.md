@@ -1,5 +1,4 @@
 ﻿# NowPlaying
-___
 Extremely simple NET 6.0 app that can serve as a Browser Source in OBS.
 Sole purpose is to show current song playing in ANY media player that uses
 the Windows SDK to integrate with the media player controls
